@@ -1,0 +1,41 @@
+# Configuration
+
+# -------- Pipeline Configuration --------
+# Classification threshold
+threshold: 0.5
+
+# Input resolution for CNN, is fixed for Inception-v3
+input_size: 299
+
+# Batch size should be as large as possible to speed up the classification process
+batch_size: 10
+
+# -------- Data --------
+# DIR where tiles are saved
+tile_dir: data/tiles
+
+# Path where pickle with tile coordinates is saved
+tile_coords_path: data/coords/TileCoords.pickle
+
+# Path to csv where PV locations are stored
+pv_db_path: data/pv_database/PVs_NRW.csv
+
+# Path to csv which lists all completely processed tiles
+processed_path: logs/processing/Processed.csv
+
+# Path to csv which lists all tiles where processing went wrong
+not_processed_path: logs/processing/notProcessed.csv
+
+# Path to csv which lists all downloaded tiles
+# Only fully downloaded tiles are stored here
+downloaded_path: logs/downloading/DownloadedTiles.csv
+
+# Path to csv which lists all tiles where downloading went wrong
+not_downloaded_path: logs/downloading/notDownloadedTiles.csv
+
+# Path to geojson for all German states
+geojson_path: data/deutschlandGeoJSON/2_bundeslaender/1_sehr_hoch.geojson
+
+# -------- Model Checkpoint --------
+# Path for loading model weights
+checkpoint_path: models/DeepSolar_openNRW_classification.tar
