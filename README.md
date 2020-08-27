@@ -24,6 +24,10 @@ Just set your configuration in config.yml and execute run_pipeline.py. In the ba
 
 If not all tiles have been downloaded in the first run, just execute tile_updater.py to update TileCoords.pickle and re-run run_pipeline.py. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed from Tile_coords.pickle, i.e. only tile coordinates not yet downloaded remain in the Tile_coords.pickle file.
 
+## License:
+
+MIT
+
 ## Notes:
 
 - NRW's geojson can be downloaded from https://github.com/kdmayer/deutschlandGeoJSON.git
