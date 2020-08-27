@@ -12,13 +12,15 @@
 
 ## Workflow:
 
-- Tiles covering an area of 240x240m are downloaded (4800x4800 pixels), splitted into images of size 16x16m, and then classified and segmented in order to record the GPS coordinates of solar panels in a database
+- Tiles covering an area of 240x240m are downloaded (4800x4800 pixels), splitted into images of size 16x16m, and then classified in order to record the GPS coordinates of solar panels in a database
 
-1. Tile_creator.py will automatically create the list of coordinates for all 596,722 tiles covering NRW, if TileCoords.pickle does not yet exist.
-2. Tile_downloader.py will automatically download the tiles specified in TileCoords.pickle in a multi-threaded fashion.
-3. Tile_processorpy will automatically process all completely downloaded files to identify and locate existing PV panels. To do so, Tile_processor.py splits tiles into images with a resolution of 320x320 pixels and classifies them with a CNN called DeepSolar. Images are classified as positive if they contain solar panels, negative otherwise
+Just set your configuration in config.yml and execute run_pipeline.py. In the background, the following three steps will happen:
 
-After one complete run of the program, just run "tile_updater.py" to update TileCoords.pickle and go back to step 2 until all tiles have been downloaded. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed from Tile_coords.pickle, i.e. only tile coordinates not yet downloaded remain in the Tile_coords.pickle file.
+    1. Tile_creator.py will automatically create the list of coordinates for all 596,722 tiles covering NRW, if TileCoords.pickle does not yet exist.
+    2. Tile_downloader.py will automatically download the tiles specified in TileCoords.pickle in a multi-threaded fashion.
+    3. Tile_processorpy will automatically process all completely downloaded files to identify and locate existing PV panels. To do so, Tile_processor.py splits tiles into images with a resolution of 320x320 pixels and classifies them with a CNN called DeepSolar. Images are classified as positive if they contain solar panels, negative otherwise
+
+If not all tiles have been downloaded in the first run, just execute tile_updater.py to update TileCoords.pickle re-run run_pipeline.py. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed from Tile_coords.pickle, i.e. only tile coordinates not yet downloaded remain in the Tile_coords.pickle file.
 
 ## Notes:
 
