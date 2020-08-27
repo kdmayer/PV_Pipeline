@@ -10,7 +10,7 @@
     ![PV_system](https://github.com/kdmayer/PV_Pipeline/blob/master/PV%20system%201.png)
     ![PV_system](https://github.com/kdmayer/PV_Pipeline/blob/master/PV%20system%203.png)
     
-## Program Overview:
+## Overview:
 
 - Tiles covering an area of 240x240m are downloaded (4800x4800 pixels), splitted into images of size 16x16m, and then classified in order to record the GPS coordinates of solar panels in a database
 
