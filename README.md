@@ -12,26 +12,13 @@
 
 ## Workflow:
 
-- Tiles covering an area of 240x240m are downloaded (4800x4800 pixels), splitted into images of size 16x16m, and then classified and segmented in order to record the GPS coordinates and the area of solar panels in a database
+- Tiles covering an area of 240x240m are downloaded (4800x4800 pixels), splitted into images of size 16x16m, and then classified and segmented in order to record the GPS coordinates of solar panels in a database
 
-1. If TileCoords.pickle does not yet exist, tile_creator.py will automatically create the list of coordinates for all 596,722 tiles covering NRW.
-2. Download tiles specified in TileCoords.pickle in a multi-threaded fashion with tile_downloader.py
-3. Process all completely downloaded files to identify and locate existing PV panels. Tile_processor.py runs in the background, splitting tiles into images (320x320 pixels) and classifying them with a CNN called DeepSolar. Images are classified as positive if they contain solar panels, negative otherwise
-4. Run "tile_updater.py" to update TileCoords.pickle. All tiles that have already been completely downloaded will be removed, i.e. only tile coordinates not yet been downloaded remain in the Tile_coords.pickle file. Go back to step 2 until all tiles have been downloaded
+1. Tile_creator.py will automatically create the list of coordinates for all 596,722 tiles covering NRW, if TileCoords.pickle does not yet exist.
+2. Tile_downloader.py will automatically download the tiles specified in TileCoords.pickle in a multi-threaded fashion.
+3. Tile_processorpy will automatically process all completely downloaded files to identify and locate existing PV panels. To do so, Tile_processor.py splits tiles into images with a resolution of 320x320 pixels and classifies them with a CNN called DeepSolar. Images are classified as positive if they contain solar panels, negative otherwise
 
-
-## Files:
-
-* Tile_coords_NRW.py: 
-  * Creates a pickle file containing a list with the coordinates of all image tiles in NRW
-* Tile_Download.py: 
-  * Downloads the previously specified tiles by their coordinates in a multi-threaded fashion
-* Tile_Processing.py: 
-  * Splits tiles into images (320x320 pixels) and classifies them with a CNN called DeepSolar
-  * Images are classified as positive if they contain solar panels, negative otherwise
-* Update_Tiles_coord.py: 
-  * Updates the pickle file of image tile coordinates in case Tile_Download aborts
-  * All tiles that have already been completely downloaded will be removed, i.e. only tile coordinates not yet been downloaded remain in the Tile_coords.pickle file
+After one complete run of the program, just run "tile_updater.py" to update TileCoords.pickle and go back to step 2 until all tiles have been downloaded. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed, i.e. only tile coordinates not yet been downloaded remain in the Tile_coords.pickle file.
 
 ## Notes:
 
