@@ -16,11 +16,11 @@
 
 Just set your configuration in config.yml and execute run_pipeline.py. In the background, the following three steps will happen:
 
-    1. Tile_creator.py will automatically create the list of coordinates for all 596,722 tiles covering NRW, if TileCoords.pickle does not yet exist.
-    2. Tile_downloader.py will automatically download the tiles specified in TileCoords.pickle in a multi-threaded fashion.
-    3. Tile_processorpy will automatically process all completely downloaded files to identify and locate existing PV panels. To do so, Tile_processor.py splits tiles into images with a resolution of 320x320 pixels and classifies them with a CNN called DeepSolar. Images are classified as positive if they contain solar panels, negative otherwise
+    * Tile_creator.py will automatically create the list of coordinates for all 596,722 tiles covering NRW, if TileCoords.pickle does not yet exist.
+    * Tile_downloader.py will automatically download the tiles specified in TileCoords.pickle in a multi-threaded fashion.
+    * Tile_processorpy will automatically process all completely downloaded files to identify and locate existing PV panels. To do so, Tile_processor.py splits tiles into images with a resolution of 320x320 pixels and classifies them with a CNN called DeepSolar. Images are classified as positive if they contain solar panels, negative otherwise
 
-If not all tiles have been downloaded in the first run, just execute tile_updater.py to update TileCoords.pickle re-run run_pipeline.py. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed from Tile_coords.pickle, i.e. only tile coordinates not yet downloaded remain in the Tile_coords.pickle file.
+If not all tiles have been downloaded in the first run, just execute tile_updater.py to update TileCoords.pickle and re-run run_pipeline.py. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed from Tile_coords.pickle, i.e. only tile coordinates not yet downloaded remain in the Tile_coords.pickle file.
 
 ## Notes:
 
