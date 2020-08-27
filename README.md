@@ -1,4 +1,4 @@
-## openNRW platform:
+## OpenNRW Platform:
 
 - The openNRW platform provides exhaustive aerial imagery for the German state of North Rhine-Westphalia (NRW)
 - Aerial imagery is characterized by a ground sampling distance (GSD) of 10 cm
@@ -9,10 +9,12 @@
 
     ![PV_system](https://github.com/kdmayer/PV_Pipeline/blob/master/PV%20system%201.png)
     ![PV_system](https://github.com/kdmayer/PV_Pipeline/blob/master/PV%20system%203.png)
-
-## Workflow:
+    
+## Program Overview:
 
 - Tiles covering an area of 240x240m are downloaded (4800x4800 pixels), splitted into images of size 16x16m, and then classified in order to record the GPS coordinates of solar panels in a database
+
+## Workflow:
 
 Just set your configuration in config.yml and execute run_pipeline.py. In the background, the following three steps will happen:
 
