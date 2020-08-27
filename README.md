@@ -8,7 +8,7 @@
 - Detect solar panels on aerial imagery to create a database which records all PV system locations and their respective areas
 
     ![PV_system](PV system 1.png)
-    ![PV_system](PV system 2.png)
+    ![PV_system](https://github.com/kdmayer/PV_Pipeline/blob/master/PV%20system%203.png)
 
 ## Workflow:
 
