@@ -26,7 +26,7 @@ If not all tiles have been downloaded in the first run, just execute tile_update
 
 ## License:
 
-[MIT](https://github.com/kdmayer/PV_Pipeline/blob/master/LICENSE
+[MIT](https://github.com/kdmayer/PV_Pipeline/blob/master/LICENSE)
 
 ## Notes:
 
