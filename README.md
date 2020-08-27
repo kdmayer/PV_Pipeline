@@ -18,7 +18,7 @@
 2. Tile_downloader.py will automatically download the tiles specified in TileCoords.pickle in a multi-threaded fashion.
 3. Tile_processorpy will automatically process all completely downloaded files to identify and locate existing PV panels. To do so, Tile_processor.py splits tiles into images with a resolution of 320x320 pixels and classifies them with a CNN called DeepSolar. Images are classified as positive if they contain solar panels, negative otherwise
 
-After one complete run of the program, just run "tile_updater.py" to update TileCoords.pickle and go back to step 2 until all tiles have been downloaded. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed, i.e. only tile coordinates not yet been downloaded remain in the Tile_coords.pickle file.
+After one complete run of the program, just run "tile_updater.py" to update TileCoords.pickle and go back to step 2 until all tiles have been downloaded. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed from Tile_coords.pickle, i.e. only tile coordinates not yet downloaded remain in the Tile_coords.pickle file.
 
 ## Notes:
 
