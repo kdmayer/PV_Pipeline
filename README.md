@@ -24,14 +24,10 @@ Just set your configuration in config.yml and execute run_pipeline.py. In the ba
 
 If not all tiles have been downloaded in the first run, just execute tile_updater.py to update TileCoords.pickle and re-run run_pipeline.py. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed from Tile_coords.pickle, i.e. only tile coordinates not yet downloaded remain in the Tile_coords.pickle file.
 
+## Hint:
+
+TileCoords.pickle should be splitted into multiple parts. By doing so, you can run multiple pipelines simultaneously, each of which only downloads and processes tiles specified in its respective TileCoords.pickle file.
+
 ## License:
 
 [MIT](https://github.com/kdmayer/PV_Pipeline/blob/master/LICENSE)
-
-## Notes:
-
-- NRW's geojson can be downloaded from https://github.com/kdmayer/deutschlandGeoJSON.git
-- DeepSolar can be obtained from https://github.com/wangzhecheng
-
-
-
