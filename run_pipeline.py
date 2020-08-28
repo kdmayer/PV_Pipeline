@@ -1,11 +1,3 @@
-'''
-Workflow:
-1. If TileCoords.pickle does not yet exist, create it with tile_creator.py to have a list of coordinates for all 596,722 tiles covering NRW.
-2. Download tiles from TileCoords.pickle in a multi-threaded fashion with tile_downloader.py
-3. Process all completely downloaded files to identify and locate existing PV panels with tile_processor.py
-4. Run "tile_updater.py" to update TileCoords.pickle by removing all completely downloaded tiles and go back to step 2.
-
-'''
 from __future__ import unicode_literals
 import yaml
 from pathlib import Path
@@ -18,7 +10,6 @@ from src.pipeline_components.tile_downloader import TileDownloader
 from src.pipeline_components.tile_processor import TileProcessor
 from src.pipeline_components.tile_updater import TileCoordsUpdater
 from src.utils.geojson_handler_utils import GeoJsonHandler
-
 
 def main():
 
