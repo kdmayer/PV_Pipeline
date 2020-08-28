@@ -5,7 +5,7 @@
 
 ## Goal:
 
-- Detect solar panels on aerial imagery to create a database which records all PV system locations and their respective areas
+- Detect solar panels on aerial imagery to create a database which records all PV system locations
 
     ![PV_system](https://github.com/kdmayer/PV_Pipeline/blob/master/PV%20system%201.png)
     ![PV_system](https://github.com/kdmayer/PV_Pipeline/blob/master/PV%20system%203.png)
