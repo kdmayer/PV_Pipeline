@@ -18,11 +18,11 @@
 
 Just set your configuration in config.yml and execute run_pipeline.py. In the background, the following three steps will happen:
 
-* Tile_creator.py will automatically create the list of coordinates for all 596,722 tiles covering NRW, if TileCoords.pickle does not yet exist.
+* Tile_creator.py will automatically create the list of coordinates for all 596,722 tiles covering NRW, if TileCoords.pickle does not yet exist. Alternatively, you can simply upload your own list of tile coordinates for your area of interest. Note: Please adhere to the format found in TileCoords.pickle in case you choose to upload a specific area of interest.
 * Tile_downloader.py will automatically download the tiles specified in TileCoords.pickle in a multi-threaded fashion. If you don't want to download all tiles specified in TileCoords.pickle, feel free to abort this step at anytime and continue by processing the already dowloaded tiles.
 * Tile_processor.py will automatically process all completely downloaded files to identify and locate existing PV panels. To do so, Tile_processor.py splits tiles into images with a resolution of 320x320 pixels and classifies them with a CNN called DeepSolar. Images are classified as positive if they contain solar panels, negative otherwise
 
-If not all tiles have been downloaded in the first run, just execute tile_updater.py to update TileCoords.pickle and re-run run_pipeline.py. By running "tile_updater.py", all tiles that have already been completely downloaded will be removed from Tile_coords.pickle, i.e. only tile coordinates not yet downloaded remain in the Tile_coords.pickle file.
+If not all tiles have been processed in the first run, just set "run_tile_coords_updater" in the config.yml to "1" re-run run_pipeline.py. By running "tile_updater.py", all tiles that have already been completely processed will be removed from Tile_coords.pickle, i.e. only tile coordinates not yet processed remain in the Tile_coords.pickle file.
 
 ## Hint:
 
