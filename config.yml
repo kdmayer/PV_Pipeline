@@ -1,5 +1,14 @@
 # Configuration
 
+# Which part of the pipeline do you want to execute?
+run_tile_creator: 0
+
+run_tile_downloader: 0
+
+run_tile_processor: 0
+
+run_tile_coords_updater: 0
+
 # -------- Pipeline Configuration --------
 # Classification threshold
 threshold: 0.5
@@ -15,7 +24,7 @@ batch_size: 10
 tile_dir: data/tiles
 
 # Path where pickle with tile coordinates is saved
-tile_coords_path: data/coords/TileCoords.pickle
+tile_coords_path: data/coords/Tile_coords_Bottrop.pickle
 
 # Path to csv where PV locations are stored
 pv_db_path: data/pv_database/PVs_NRW.csv

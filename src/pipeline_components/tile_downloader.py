@@ -14,17 +14,17 @@ from pathlib import Path
 
 class TileDownloader(object):
 
-    def __init__(self, polygon, tile_coords):
+    def __init__(self, configuration, polygon, tile_coords):
 
         self.polygon = polygon
 
         self.tile_coords = tile_coords
 
-        self.tile_dir = os.environ['tile_dir']
+        self.tile_dir = configuration['tile_dir']
 
-        self.downloaded_path = os.environ['downloaded_path']
+        self.downloaded_path = configuration['downloaded_path']
 
-        self.not_downloaded_path = os.environ['not_downloaded_path']
+        self.not_downloaded_path = configuration['not_downloaded_path']
 
         # URL dummy for image request from open NRW server
         self.WMS_1 = 'https://www.wms.nrw.de/geobasis/wms_nw_dop?SERVICE=WMS&REQUEST=GetMap&Version=1.1.1&LAYERS=nw_dop_rgb&SRS=EPSG:4326&BBOX='

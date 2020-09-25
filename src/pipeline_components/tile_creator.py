@@ -6,17 +6,14 @@ Created on Fri Jun 28 11:07:41 2019
 """
 import numpy as np
 import pickle
-import os
-import json
-from itertools import chain
 from shapely.geometry import Point
-from shapely.geometry.polygon import Polygon
+
 
 class TileCreator(object):
 
-    def __init__(self, polygon):
+    def __init__(self, configuration, polygon):
 
-        self.output_path = os.environ['tile_coords_path']
+        self.output_path = configuration['tile_coords_path']
 
        # Avg. earth radius in meters
         self.radius = 6371000

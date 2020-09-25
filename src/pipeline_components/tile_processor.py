@@ -20,35 +20,36 @@ from torch.nn import functional as F
 from torchvision.models import Inception3
 from torch.utils.data import Dataset, DataLoader
 from src.dataset.dataset import NrwDataset
+import sys
 from src.utils.geojson_handler_utils import GeoJsonHandler
 
 
 class TileProcessor(object):
 
-    def __init__(self, polygon):
+    def __init__(self, configuration, polygon):
 
         # Execute on gpu, if available
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
         # ------ Load model configuration ------
-        self.threshold = float(os.environ['threshold'])
+        self.threshold = configuration['threshold']
 
         # Batch size should be as large as possible to speed up the classification process
-        self.batch_size = int(os.environ['batch_size'])
+        self.batch_size = configuration['batch_size']
 
-        self.input_size = int(os.environ['input_size'])
+        self.input_size = configuration['input_size']
 
         # ------ Specify required input directories ------
-        self.checkpoint_path = os.environ['checkpoint_path']
+        self.checkpoint_path = configuration['checkpoint_path']
 
-        self.tile_dir = os.environ['tile_dir']
+        self.tile_dir = configuration['tile_dir']
 
        # ------ Specify required output directories ------
-        self.pv_db_path = os.environ['pv_db_path']
+        self.pv_db_path = configuration['pv_db_path']
 
-        self.processed_path = os.environ['processed_path']
+        self.processed_path = configuration['processed_path']
 
-        self.not_processed_path = os.environ['not_processed_path']
+        self.not_processed_path = configuration['not_processed_path']
 
         # ------ Load model and dataset ------
         self.model = self.loadModel()
@@ -188,7 +189,7 @@ class TileProcessor(object):
 
                 # Classify image
 
-                outputs = self.model(images_sub)
+                outputs = self.model(images_sub.to(self.device))
 
                 prob = F.softmax(outputs, dim=1)
 
@@ -199,7 +200,7 @@ class TileProcessor(object):
                 # is not differentiable wrt the indices. So you should detach() the indices
                 # before providing them.
 
-                prob = prob.detach().numpy()
+                prob = prob.cpu().detach().numpy()
 
                 # If classification is positive, save coordinates x,y into database
 
@@ -227,11 +228,11 @@ class TileProcessor(object):
 
             # Classify image
 
-            outputs = self.model(images_sub)
+            outputs = self.model(images_sub.to(self.device))
 
             prob = F.softmax(outputs, dim=1)
 
-            prob = prob.detach().numpy()
+            prob = prob.cpu().detach().numpy()
 
             # If classification is positive, save coordinates x,y into database
 
@@ -280,46 +281,20 @@ class TileProcessor(object):
 
                     writer = csv.writer(csvFile, lineterminator="\n")
 
-                    writer.writerow([str(currentTile)])
+                    writer.writerow([currentTile])
 
             # Only tiles that weren't fully processed are saved subsequently
+            # ToDo: Catch the exception and write it in a second column in the .csv
             except:
+
+                e = sys.exc_info()[0]
 
                 # Save the tile which could not be processed and continue
                 with open(Path(self.not_processed_path), "a") as csvFile:
 
                     writer = csv.writer(csvFile, lineterminator="\n")
 
-                    writer.writerow([str(currentTile)])
+                    writer.writerow([currentTile, e])
 
-            # Delete processed tile
+            # Delete iterated tile
             os.remove(Path(self.tile_dir + "/" + str(currentTile)))
-
-
-
-'''
-
-os.environ['threshold'] = f"{0.5}"
-os.environ['batch_size'] = f"{10}"
-os.environ['input_size'] = f"{299}"
-
-print(os.getcwd())
-
-os.environ['pv_db_path'] = '../../data/pv_database/PVs_NRW.csv'
-
-os.environ['processed_path'] = '../../logs/processing/Processed.csv'
-
-os.environ['not_processed_path'] = '../../logs/processing/notProcessed.csv'
-
-print(type(float(os.environ['threshold'])))
-
-os.environ['checkpoint_path'] = f"/Users/kevin/PV_Pipeline/models/DeepSolar_openNRW_classification.tar"
-os.environ['tile_dir'] = f"/Users/kevin/PV_Pipeline/data/tiles"
-
-nrw_handler = GeoJsonHandler("/Users/kevin/PV_Pipeline/data/deutschlandGeoJSON/2_bundeslaender/1_sehr_hoch.geojson")
-
-tileProcessor = TileProcessor(nrw_handler.polygon)
-
-tileProcessor.run()
-
-'''
