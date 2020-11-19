@@ -1,3 +1,10 @@
+## About:
+
+Repo for "DeepSolar for Germany": Pipeline and models to process more than 133 million aerial images from Germany's most populous state North-Rhine Westphalia in order to locate PV systems. For reference, read [paper](https://ieeexplore.ieee.org/document/9203258)
+
+The published models achieve precision and recall scores of 92% and 98% on Google Maps imagery with a GSD of 5 cm/pixel and of 64% and 87% on openNRW imagery with a GSD of 10 cm/pixel, respectively.
+
+
 ## OpenNRW Platform:
 
 - The openNRW platform provides exhaustive aerial imagery for the German state of North Rhine-Westphalia (NRW)
