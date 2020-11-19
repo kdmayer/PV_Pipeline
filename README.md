@@ -18,10 +18,6 @@ Repo for "DeepSolar for Germany"
 
     ![PV_system](https://github.com/kdmayer/PV_Pipeline/blob/master/PV%20system%201.png)
     ![PV_system](https://github.com/kdmayer/PV_Pipeline/blob/master/PV%20system%203.png)
-    
-## Overview:
-
-- Tiles covering an area of 240x240m are downloaded (4800x4800 pixels), splitted into images of size 16x16m, and then classified in order to record the GPS coordinates of solar panels in a database
 
 ## Workflow:
 
@@ -35,7 +31,9 @@ If not all tiles have been processed in the first run, just set "run_tile_coords
 
 ## Hint:
 
-TileCoords.pickle should be splitted into multiple parts. By doing so, you can run multiple pipelines simultaneously, each of which only downloads and processes tiles specified in its respective TileCoords.pickle file.
+- TileCoords.pickle should be splitted into multiple parts. By doing so, you can run multiple pipelines simultaneously, each of which only downloads and processes tiles specified in its respective TileCoords.pickle file.
+
+- Tiles covering an area of 240x240m are downloaded (4800x4800 pixels), splitted into images of size 16x16m, and then classified in order to record the GPS coordinates of solar panels in a database
 
 ## License:
 
