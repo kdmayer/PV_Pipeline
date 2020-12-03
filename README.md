@@ -38,3 +38,16 @@ If not all tiles have been processed in the first run, just set "run_tile_coords
 ## License:
 
 [MIT](https://github.com/kdmayer/PV_Pipeline/blob/master/LICENSE)
+
+## BibTex Citation:
+
+Please cite our work as
+
+@inproceedings{Mayer2020,
+author = {Mayer, Kevin and Wang, Zhecheng and Arlt, Marie-Louise and Rajagopal, Ram and Neumann, Dirk},
+booktitle = {IEEE Smart Energy Systems and Technologies, Istanbul, Turkey, September 07 - 09, 2020},
+url = {https://ieeexplore.ieee.org/document/9203258},
+publisher = {IEEE},
+title = {{DeepSolar for Germany : A deep learning framework for PV system mapping from aerial imagery}},
+year = {2020}
+}
