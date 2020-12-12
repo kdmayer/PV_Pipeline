@@ -2,9 +2,9 @@
 
 Repo for "DeepSolar for Germany" 
 
-- Pipeline to process more than 133 million aerial images from Germany's most populous state NRW in order to locate PV systems
-- Google Maps-based model (PyTorch) achieves precision and recall scores of 92% and 98% on imagery with a spatial resolution of 5 cm/pixel
-- OpenNRW-based model (PyTorch) achieves precision and recall scores of 64% and 87% on imagery with a spatial resolution of 10 cm/pixel
+- *Pipeline* to process more than 133 million aerial images from Germany's most populous state NRW in order to locate PV systems
+- *Google Maps-based model (PyTorch)* achieves precision and recall scores of 92% and 98% on imagery with a spatial resolution of 5 cm/pixel
+- *OpenNRW-based model (PyTorch)* achieves precision and recall scores of 64% and 87% on imagery with a spatial resolution of 10 cm/pixel
 - [Paper](https://ieeexplore.ieee.org/document/9203258)
 
 ## OpenNRW Platform:
@@ -46,10 +46,10 @@ Please cite our work as
 
     @inproceedings{Mayer2020,
     author = {Mayer, Kevin and Wang, Zhecheng and Arlt, Marie-Louise and Rajagopal, Ram and Neumann, Dirk},
-    booktitle = {IEEE Smart Energy Systems and Technologies, Istanbul, Turkey, September 07 - 09, 2020},
+    conference = {IEEE Smart Energy Systems and Technologies, Istanbul, Turkey, September 07 - 09, 2020},
     url = {https://ieeexplore.ieee.org/document/9203258},
     publisher = {IEEE},
-    title = {{DeepSolar for Germany : A deep learning framework for PV system mapping from aerial imagery}},
+    title = {{DeepSolar for Germany: A deep learning framework for PV system mapping from aerial imagery}},
     year = {2020}
     }
 
