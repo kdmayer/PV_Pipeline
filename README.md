@@ -1,10 +1,10 @@
 ## About:
 
-Repo for "DeepSolar for Germany"
+Repo for "DeepSolar for Germany" 
 
 - Pipeline to process more than 133 million aerial images from Germany's most populous state NRW in order to locate PV systems
-- Google Maps-based model achieves precision and recall scores of 92% and 98% on imagery with a spatial resolution of 5 cm/pixel
-- OpenNRW-based model achieves precision and recall scores of 64% and 87% on imagery with a spatial resolution of 10 cm/pixel
+- Google Maps-based model (PyTorch) achieves precision and recall scores of 92% and 98% on imagery with a spatial resolution of 5 cm/pixel
+- OpenNRW-based model (PyTorch) achieves precision and recall scores of 64% and 87% on imagery with a spatial resolution of 10 cm/pixel
 - [Paper](https://ieeexplore.ieee.org/document/9203258)
 
 ## OpenNRW Platform:
