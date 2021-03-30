@@ -1,6 +1,6 @@
 ## Update:
 
-#### We have released our follow-up paper "An Enriched Automated PV Registry: Combining Image Recognition and 3D Building Data" published at the "Tackling Climate Change with AI" workshop at NeurIPS 2020. Please have a look at the [repo](https://github.com/kdmayer/PV4GER) which also includes instructions on how to access all the data and models produced in this research!
+#### We have released our follow-up paper "An Enriched Automated PV Registry: Combining Image Recognition and 3D Building Data" published at NeurIPS 2020. Please have a look at the [repo](https://github.com/kdmayer/PV4GER) which also includes instructions on how to access all the data and models produced in this research!
 
 ![Pipeline overview](https://github.com/kdmayer/PV4GER/blob/master/pipeline_visualization.png)
 
