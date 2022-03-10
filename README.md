@@ -1,6 +1,11 @@
 ## Update:
 
-#### We have released our follow-up paper "An Enriched Automated PV Registry: Combining Image Recognition and 3D Building Data" published at NeurIPS 2020. Please have a look at the [repo](https://github.com/kdmayer/PV4GER) which also includes instructions on how to access all the data and models produced in this research!
+We have released two follow-up papers to this study:
+
+- "3D-PV-Locator: Large-scale detection of rooftop-mounted photovoltaic systems in 3D" published in Applied Energy in 2022 and
+- "An Enriched Automated PV Registry: Combining Image Recognition and 3D Building Data" published at NeurIPS 2020. 
+
+Please have a look at the [repo](https://github.com/kdmayer/3D-PV-Locator) which also includes instructions on how to access all the data and models produced in this research!
 
 ![Pipeline overview](https://github.com/kdmayer/PV4GER/blob/master/pipeline_visualization.png)
 
